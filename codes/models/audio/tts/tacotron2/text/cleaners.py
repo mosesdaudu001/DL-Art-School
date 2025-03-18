@@ -83,7 +83,7 @@ def transliteration_cleaners(text):
 
 def english_cleaners(text):
   '''Pipeline for English text, including number and abbreviation expansion.'''
-  text = GermanTransliterate().transliterate(text)
+  # text = GermanTransliterate().transliterate(text)
   text = lowercase(text)
   text = collapse_whitespace(text)
   text = text.replace('"', '')
