@@ -13,12 +13,6 @@ _punctuation = '!\'(),.:;? '
 _special = '-'
 _letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyzäöüßÄÖÜ'
 
-# Prepend "@" to ARPAbet symbols to ensure uniqueness (some are the same as uppercase letters):
-_arpabet = ['@' + s for s in cmudict.valid_symbols]
-
-# Export all symbols:
-symbols = [_pad] + list(_special) + list(_punctuation) + list(_letters) + _arpabet
-
 
 # Path to your Yoruba transcription file
 file_path = 'yoruba_transcription.txt'
@@ -42,4 +36,9 @@ try:
     _letters = _letters + ''.join(sorted_new_chars)
 
 
+# Prepend "@" to ARPAbet symbols to ensure uniqueness (some are the same as uppercase letters):
+_arpabet = ['@' + s for s in cmudict.valid_symbols]
+
+# Export all symbols:
+symbols = [_pad] + list(_special) + list(_punctuation) + list(_letters) + _arpabet
 
