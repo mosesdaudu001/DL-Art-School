@@ -1,4 +1,4 @@
-name: custom_language_gpt
+name: yoruba_language_gpt
 model: extensibletrainer
 scale: 1
 gpu_ids: [0] # <-- unless you have multiple gpus, use this
@@ -26,7 +26,7 @@ datasets:
     conditioning_length: 44000
     use_bpe_tokenizer: True
     load_aligned_codes: False
-    tokenizer_vocab: ../custom_language_tokenizer.json
+    tokenizer_vocab: ../yoruba_language_tokenizer.json
   val:
     name: val_dataset
     n_workers: 1
@@ -43,7 +43,7 @@ datasets:
     conditioning_length: 44000
     use_bpe_tokenizer: True
     load_aligned_codes: False
-    tokenizer_vocab: ../custom_language_tokenizer.json
+    tokenizer_vocab: ../yoruba_language_tokenizer.json
 
 steps:        
   gpt_train:
@@ -141,11 +141,11 @@ eval:
 
 logger:
   print_freq: 100 # TODO: set this to epoch size
-  save_checkpoint_freq: 500 # CHANGEME: especially you should increase this it's really slow
+  save_checkpoint_freq: 100 # CHANGEME: especially you should increase this it's really slow
   visuals: [gen, mel] #TODO: figure this out
   visual_debug_rate: 500
   is_mel_spectrogram: true
-  disable_state_saving: true # CHANGEME if you plan to halt training inbetween
+  disable_state_saving: false # CHANGEME if you plan to halt training inbetween
 
 upgrades:
   # Variable: number_of_checkpoints_to_save
