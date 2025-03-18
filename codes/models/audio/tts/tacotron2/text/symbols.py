@@ -34,6 +34,8 @@ try:
     
     # Update _letters with new Yoruba characters
     _letters = _letters + ''.join(sorted_new_chars)
+except:
+    pass
 
 
 # Prepend "@" to ARPAbet symbols to ensure uniqueness (some are the same as uppercase letters):
